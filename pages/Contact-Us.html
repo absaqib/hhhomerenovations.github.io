@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact H&H | Start Your Renovation Journey</title>
+    <meta name="description" content="Get in touch with the H&H Home Renovations team. Call, email, or use our contact form for a free consultation.">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="../assets/images/favico.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" xintegrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        .contact-section {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            align-items: flex-start;
+            text-align: left;
+        }
+        .contact-details h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .contact-details p {
+           max-width: none;
+        }
+        .contact-info {
+            margin-top: 2rem;
+        }
+        .contact-info p {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        .contact-info a {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+        }
+        .contact-form textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        /* Style for the success message */
+        #success-message {
+            display: none; /* Hidden by default */
+            padding: 25px;
+            background-color: #e9f7ff; /* Light blue background */
+            color: var(--dark-blue);
+            border: 1px solid var(--primary-blue);
+            border-radius: 5px;
+            margin-top: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .contact-section {
+                grid-template-columns: 1fr;
+            }
+            .contact-details {
+                text-align: center;
+            }
+             .contact-details p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <a href="../index.html" class="logo">
+            <img src="../assets/images/logo.png" alt="H&H Home Renovations Logo">
+        </a>
+        <nav class="main-nav">
+            <a href="../index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="Projects.html"><i class="fas fa-briefcase"></i> Portfolio</a>
+            <a href="Services.html"><i class="fas fa-concierge-bell"></i> Services</a>
+            <a href="About.html"><i class="fas fa-info-circle"></i> About</a>
+            <a href="Contact-Us.html"><i class="fas fa-envelope"></i> Contact Us</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="hero" style="background-image: linear-gradient(rgba(25, 42, 86, 0.7), rgba(25, 42, 86, 0.7)), url('../assets/images/homepagepic1.jpeg');">
+            <div class="hero-content">
+                <h1 class="animate-hero-text">Get In Touch</h1>
+                <p class="hero-subheading">Let's Build Your Dream Home Together</p>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="contact-section">
+                <div class="contact-details">
+                    <h2>Contact Us</h2>
+                    <p>At H&H, our dream is to make your dreams for your home come true. Whether you are just starting your journey or already have a specific project in mind, we’d love to discuss it with you.</p>
+                    <div class="contact-info">
+                        <p><strong>Call Us:</strong> <a href="tel:0899420466">089 942 0466</a></p>
+                        <p><strong>Email Us:</strong> <a href="mailto:info@hhhomerenovations.ie">info@hhhomerenovations.ie</a></p>
+                    </div>
+                    <p>Alternatively, fill in the contact form, and we will get in touch as soon as possible. We look forward to hearing from you!</p>
+                </div>
+                <div class="contact-form">
+                    <!-- The form now has an ID for JavaScript to target -->
+                    <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                        <!-- The access key has been updated -->
+                        <input type="hidden" name="access_key" value="d17502d8-612e-4a44-833a-bf93f33ce33c">
+                        
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <!-- NEWLY ADDED PHONE NUMBER FIELD -->
+                        <input type="tel" name="phone" placeholder="Your Phone Number (Optional)">
+                        <textarea name="message" placeholder="Your Message" required></textarea>
+                        
+                        <button type="submit" class="cta-button">Send Message</button>
+                    </form>
+                    
+                    <!-- CONTAINER FOR THE SUCCESS MESSAGE -->
+                    <div id="success-message">
+                        Your message has been forwarded to H&H Home Renovations. Our staff member will contact you as soon as possible. Please allow us 1-2 working days to get response to your query.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-col about-col">
+            <img src="../assets/images/logo.png" alt="H&H Home Renovations Logo" class="footer-logo">
+            <p>Bringing your vision to life with a seamless, concept-to-completion renovation experience. Serving County Longford and surrounding areas.</p>
+        </div>
+        <div class="footer-col links-col">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="Projects.html">Portfolio</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="Contact-Us.html">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="footer-col contact-col">
+            <h4>Contact Info</h4>
+            <p><i class="fas fa-phone"></i> <a href="tel:0899420466">089 942 0466</a></p>
+            <p><i class="fas fa-envelope"></i> <a href="mailto:info@hhhomerenovations.ie">info@hhhomerenovations.ie</a></p>
+            <p><i class="fas fa-map-marker-alt"></i> Longford, Co. Longford, Ireland</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>Copyright © <span id="copyright-year"></span> H&H Home Renovations – All Rights Reserved.</p>
+    </div>
+</footer>
+
+    <script src="../js/main.js" defer></script>
+    
+    <!-- NEW SCRIPT TO HANDLE FORM SUBMISSION AND DISPLAY SUCCESS MESSAGE -->
+    <script>
+        const form = document.getElementById('contact-form');
+        const successMessage = document.getElementById('success-message');
+
+        form.addEventListener('submit', function(e) {
+            // Prevent the default browser action of navigating away
+            e.preventDefault();
+            
+            const formData = new FormData(form);
+            const object = {};
+            formData.forEach((value, key) => {
+                object[key] = value;
+            });
+            const json = JSON.stringify(object);
+
+            const submitButton = form.querySelector('button[type="submit"]');
+            submitButton.innerHTML = "Sending..."; // Give user feedback
+            submitButton.disabled = true;
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            })
+            .then(async (response) => {
+                let jsonResponse = await response.json();
+                if (response.status == 200) {
+                    // On success, hide the form and show the custom message
+                    form.style.display = 'none';
+                    successMessage.style.display = 'block';
+                } else {
+                    console.log(response);
+                    // On failure, alert the user and re-enable the button
+                    alert(jsonResponse.message || 'Something went wrong. Please try again.');
+                    submitButton.innerHTML = 'Send Message';
+                    submitButton.disabled = false;
+                }
+            })
+            .catch(error => {
+                console.log(error);
+                alert('An error occurred. Please check your connection and try again.');
+                submitButton.innerHTML = 'Send Message';
+                submitButton.disabled = false;
+            });
+        });
+    </script>
+
+</body>
+</html>
