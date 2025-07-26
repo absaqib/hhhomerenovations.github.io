@@ -1,4 +1,4 @@
-/* --- H&H Custom Professional Stylesheet (Updated with Outfit Font) --- */
+/* --- H&H Custom Professional Stylesheet (Updated with Social Icons) --- */
 
 /* --- 1. Global Styles & Typography --- */
 :root {
@@ -7,7 +7,7 @@
     --light-grey-bg: #f8f9fa;
     --dark-text: #343a40;
     --light-blue-bg: #e9f7ff;
-    --accent-gold: #c5a572; /* The new warm, inviting accent color */
+    --accent-gold: #c5a572;
 }
 
 html {
@@ -61,6 +61,7 @@ p { font-size: 1.1rem; max-width: 700px; margin-left: auto; margin-right: auto; 
 
 .main-nav {
     display: flex;
+    align-items: center; /* Vertically align nav items and icons */
 }
 
 .main-nav a {
@@ -91,6 +92,39 @@ p { font-size: 1.1rem; max-width: 700px; margin-left: auto; margin-right: auto; 
 
 .main-nav a:hover::after {
     width: 100%;
+}
+
+/* --- Social Media Icons --- */
+.social-icons {
+    margin-left: 30px; /* Space between nav links and icons */
+}
+
+.social-icons a {
+    color: var(--dark-blue);
+    font-size: 1.4rem;
+    margin-left: 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--primary-blue);
+    transform: scale(1.1);
+}
+
+.footer-social-icons {
+    margin-top: 20px;
+}
+
+.footer-social-icons a {
+    color: #ccc;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-social-icons a:hover {
+    color: #fff;
+    transform: scale(1.1);
 }
 
 
@@ -338,7 +372,7 @@ p { font-size: 1.1rem; max-width: 700px; margin-left: auto; margin-right: auto; 
     margin: 0 auto;
     text-align: left;
 }
-.footer-col { flex: 1; min-width: 250px; }
+.footer-col { flex: 1; min-width: 220px; } /* Adjusted min-width for new column */
 .footer-logo { height: 70px; margin-bottom: 20px; }
 .about-col p { font-size: 0.95rem; max-width: none; margin: 0; }
 .footer-col h4 {
@@ -380,21 +414,30 @@ p { font-size: 1.1rem; max-width: 700px; margin-left: auto; margin-right: auto; 
     }
     .why-us-image {
         margin-top: 40px;
-        order: -1; /* Moves the image to the top on smaller screens */
+        order: -1;
     }
     .why-us .container {
         text-align: center;
+    }
+    .social-icons {
+        display: none; /* Hide social icons from header on medium screens */
     }
 }
 
 @media (max-width: 768px) {
     .main-nav { display: none; flex-direction: column; position: absolute; top: 90px; right: 0; background-color: white; width: 100%; box-shadow: 0 4px 10px rgba(0,0,0,0.1); padding: 20px 0; }
-    .main-nav.is-open { display: flex; }
+    .main-nav.is-open { display: flex; align-items: center; }
     .main-nav a { margin: 10px 25px; text-align: center; }
     .mobile-nav-toggle { display: block; }
 
-    .hero h1 { font-size: 2.8rem; }
-    .hero-subheading { font-size: 1.2rem; }
+    .hero h1 { 
+        font-size: 2.8rem; 
+        white-space: normal;
+    }
+    .hero-subheading { 
+        font-size: 1.2rem;
+        white-space: normal;
+    }
     .hero-images { flex-direction: column; align-items: center; }
 
     .services-grid, .portfolio-grid, .process-grid { grid-template-columns: 1fr; }
