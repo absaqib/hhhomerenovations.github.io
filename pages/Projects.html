@@ -50,6 +50,11 @@
         .ba-image img {
             width: 100%;
             display: block;
+            transition: transform 0.3s ease;
+        }
+        .ba-image:hover img {
+            transform: scale(1.05);
+            cursor: pointer;
         }
         .ba-label {
             position: absolute;
@@ -61,6 +66,7 @@
             border-radius: 20px;
             font-size: 1rem;
             font-weight: bold;
+            z-index: 2;
         }
         .image-placeholder {
             display: flex;
@@ -76,6 +82,79 @@
             font-family: 'Lato', sans-serif;
             padding: 20px;
             box-sizing: border-box;
+        }
+        
+        /* Lightbox Modal Styles */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            z-index: 1001;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: rgba(0,0,0,0.85);
+            justify-content: center;
+            align-items: center;
+        }
+        .lightbox-content {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .lightbox-content img {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+            transition: transform 0.2s ease-in-out;
+            cursor: grab;
+        }
+        .lightbox-content img:active {
+            cursor: grabbing;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+            z-index: 1003;
+        }
+        .lightbox-controls {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0,0,0,0.5);
+            border-radius: 25px;
+            padding: 10px;
+            display: flex;
+            gap: 15px;
+            z-index: 1002;
+        }
+        .lightbox-controls button {
+            background: none;
+            border: 2px solid #fff;
+            color: #fff;
+            font-size: 20px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .lightbox-controls button:hover {
+            background-color: #fff;
+            color: #000;
         }
 
         @media (max-width: 768px) {
@@ -95,17 +174,18 @@
         <a href="../index.html" class="logo">
             <img src="../assets/images/logo.png" alt="H&H Home Renovations Logo">
         </a>
-        <nav class="main-nav">
+        <nav class="main-nav"  id="main-nav">
             <a href="../index.html"><i class="fas fa-home"></i> Home</a>
             <a href="Projects.html"><i class="fas fa-briefcase"></i> Portfolio</a>
             <a href="Services.html"><i class="fas fa-concierge-bell"></i> Services</a>
             <a href="About.html"><i class="fas fa-info-circle"></i> About</a>
             <a href="Contact-Us.html"><i class="fas fa-envelope"></i> Contact Us</a>
             <div class="social-icons">
-                <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61550926522369" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/hh_home_renovations?igsh=MW14Zm16cnBrcHhrdA==" target="_blank"  rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             </div>
         </nav>
+        <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Menu">&#9776;</button>
     </header>
 
     <main>
@@ -121,16 +201,30 @@
 
                 <div class="project-entry fade-in-section">
                     <div class="project-details">
-                        <h3>Open-plan Living Renovation</h3>
-                        <p>This four-bed semi-detached home had great potential but urgently needed some re-planning and renovation. The living space in particular was disconnected, dysfunctional and dated. We created a bright, modern, and functional open-plan area.</p>
+                        <h3>Living Renovation/Media Wall</h3>
+                        <p>This living room had great potential but needed thoughtful re-planning and renovation. The space was previously disconnected, dated, and dysfunctional — now transformed with a bright, modern, and functional Media Wall.</p>
                     </div>
                     <div class="before-after-gallery">
                         <div class="ba-image">
                             <div class="image-placeholder">Old image will be uploaded soon</div>
-                            <div class="ba-label">Before</div>
                         </div>
                         <div class="ba-image">
-                            <img src="../assets/images/WhatsAppImage2022-10-04at12.04.33PM5.jpeg" alt="After the open-plan renovation">
+                            <img src="../assets/images/media wall.jpg" alt="After the open-plan renovation" class="lightbox-trigger">
+                            <div class="ba-label">After</div>
+                        </div>
+                    </div>
+                </div>
+                  <div class="project-entry fade-in-section">
+                    <div class="project-details">
+                        <h3>False Ceiling with cool lighting</h3>
+                        <p>Enhance your living room with a stylish false ceiling that adds elegance, hides wiring, and supports modern lighting. We offer expert design and installation using high-quality materials for a flawless finish.</p>
+                    </div>
+                    <div class="before-after-gallery">
+                        <div class="ba-image">
+                            <div class="image-placeholder">Old image will be uploaded soon</div>
+                        </div>
+                        <div class="ba-image">
+                            <img src="../assets/images/false ceiling.jpg" alt="After the open-plan renovation" class="lightbox-trigger">
                             <div class="ba-label">After</div>
                         </div>
                     </div>
@@ -147,7 +241,7 @@
                             <div class="ba-label">Before</div>
                         </div>
                         <div class="ba-image">
-                            <img src="../assets/images/WhatsAppImage2022-10-04at12.04.33PM1.jpeg" alt="After the kitchen renovation">
+                            <img src="../assets/images/WhatsAppImage2022-10-04at12.04.33PM1.jpeg" alt="After the kitchen renovation" class="lightbox-trigger">
                             <div class="ba-label">After</div>
                         </div>
                     </div>
@@ -156,15 +250,23 @@
                 <div class="project-entry fade-in-section">
                     <div class="project-details">
                         <h3>Bath and Restroom Update</h3>
-                        <p>This area is the base of any house upgrade; hence, it's been renovated to modern standards. We focused on high-quality fixtures, beautiful tiling, and smart storage to create a spa-like retreat.</p>
+                        <p>This area is the base of any house upgrade; hence, it's been renovated to modern standards. A sleek false ceiling was installed to give the bathroom a modern look, along with high-quality fixtures, beautiful tiling, and smart storage for a spa-like retreat.</p>
                     </div>
                     <div class="before-after-gallery">
                         <div class="ba-image">
-                            <div class="image-placeholder">Old image will be uploaded soon</div>
+                            <img src="../assets/images/before bath.jpg" alt="before the bathroom update" class="lightbox-trigger">
                             <div class="ba-label">Before</div>
                         </div>
                         <div class="ba-image">
-                            <img src="../assets/images/homepagepic2.jpeg" alt="After the bathroom update">
+                            <img src="../assets/images/after bath.jpg" alt="After the bathroom update" class="lightbox-trigger">
+                            <div class="ba-label">After</div>
+                        </div>
+                        <div class="ba-image">
+                            <img src="../assets/images/before room.jpg" alt="before the bathroom update" class="lightbox-trigger">
+                            <div class="ba-label">Before</div>
+                        </div>
+                        <div class="ba-image">
+                            <img src="../assets/images/after room.jpg" alt="After the bathroom update" class="lightbox-trigger">
                             <div class="ba-label">After</div>
                         </div>
                     </div>
@@ -181,6 +283,18 @@
             </div>
         </section>
     </main>
+    
+    <div id="lightbox-modal" class="lightbox-modal">
+        <span class="lightbox-close">&times;</span>
+        <div class="lightbox-content">
+            <img id="lightbox-image">
+        </div>
+        <div class="lightbox-controls">
+            <button id="zoom-in" title="Zoom In"><i class="fas fa-search-plus"></i></button>
+            <button id="zoom-out" title="Zoom Out"><i class="fas fa-search-minus"></i></button>
+        </div>
+    </div>
+
 
 <footer class="main-footer">
     <div class="footer-container">
@@ -202,13 +316,13 @@
             <h4>Contact Info</h4>
             <p><i class="fas fa-phone"></i> <a href="tel:0899420466">089 942 0466</a></p>
             <p><i class="fas fa-envelope"></i> <a href="mailto:info@hhhomerenovations.ie">info@hhhomerenovations.ie</a></p>
-            <p><i class="fas fa-map-marker-alt"></i> Longford, Co. Longford, Ireland</p>
+            <p><i class="fas fa-map-marker-alt"></i> Castlepollard,County Westmeath, Ireland</p>
         </div>
         <div class="footer-col social-col">
             <h4>Follow Us</h4>
             <div class="footer-social-icons">
-                <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61550926522369" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/hh_home_renovations?igsh=MW14Zm16cnBrcHhrdA==" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
     </div>
@@ -217,6 +331,93 @@
     </div>
 </footer>
  <script src="../js/main.js" defer></script>
+ <script>
+ document.addEventListener("DOMContentLoaded", function() {
+    const modal = document.getElementById('lightbox-modal');
+    const modalImg = document.getElementById('lightbox-image');
+    const closeBtn = document.querySelector('.lightbox-close');
+    const imageTriggers = document.querySelectorAll('.lightbox-trigger');
 
+    let currentZoom = 1;
+    let minZoom = 1;
+    let maxZoom = 4;
+    let zoomStep = 0.5;
+    
+    let isDragging = false;
+    let startX, startY, translateX, translateY;
+
+    imageTriggers.forEach(trigger => {
+        trigger.addEventListener('click', () => {
+            modal.style.display = 'flex';
+            modalImg.src = trigger.src;
+            resetZoom();
+        });
+    });
+
+    function closeModal() {
+        modal.style.display = 'none';
+        modalImg.src = '';
+    }
+
+    function resetZoom() {
+        currentZoom = 1;
+        translateX = 0;
+        translateY = 0;
+        updateTransform();
+    }
+    
+    function updateTransform() {
+        modalImg.style.transform = `scale(${currentZoom}) translate(${translateX}px, ${translateY}px)`;
+    }
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+
+    document.getElementById('zoom-in').addEventListener('click', () => {
+        if (currentZoom < maxZoom) {
+            currentZoom += zoomStep;
+            updateTransform();
+        }
+    });
+
+    document.getElementById('zoom-out').addEventListener('click', () => {
+        if (currentZoom > minZoom) {
+            currentZoom -= zoomStep;
+            if (currentZoom < minZoom) currentZoom = minZoom;
+            if(currentZoom === 1) { // Reset position when zoomed all the way out
+               translateX = 0;
+               translateY = 0;
+            }
+            updateTransform();
+        }
+    });
+
+    modalImg.addEventListener('mousedown', (e) => {
+        if (currentZoom > 1) {
+            e.preventDefault();
+            isDragging = true;
+            startX = e.clientX - translateX;
+            startY = e.clientY - translateY;
+        }
+    });
+
+    window.addEventListener('mousemove', (e) => {
+        if (isDragging) {
+            e.preventDefault();
+            translateX = e.clientX - startX;
+            translateY = e.clientY - startY;
+            updateTransform();
+        }
+    });
+
+    window.addEventListener('mouseup', () => {
+        isDragging = false;
+    });
+ });
+ </script>
 </body>
 </html>
