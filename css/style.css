@@ -449,10 +449,14 @@ p { font-size: 1.1rem; max-width: 700px; margin-left: auto; margin-right: auto; 
         border-top: 1px solid #eee;
         width: 100%;
     }
+    
+    /* --- FIX STARTS HERE --- */
     .main-nav .social-icons a {
+        width: auto; /* This resets the width for social icons */
         margin: 0 15px;
         font-size: 1.8rem;
     }
+    /* --- FIX ENDS HERE --- */
 
     .mobile-nav-toggle { display: block; }
 
