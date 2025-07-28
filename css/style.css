@@ -408,24 +408,12 @@ p { font-size: 1.1rem; max-width: 700px; margin-left: auto; margin-right: auto; 
 
 /* --- 6. Responsive Design --- */
 @media (max-width: 992px) {
-    .why-us-grid {
-        grid-template-columns: 1fr;
-    }
-    .why-us-image {
-        margin-top: 40px;
-        order: -1;
-    }
-    .why-us .container {
-        text-align: center;
-    }
-}
-
-@media (max-width: 768px) {
+    /* --- Mobile Navigation --- */
     .main-nav { 
         display: none; 
         flex-direction: column; 
         position: absolute; 
-        top: 90px; 
+        top: 90px; /* Adjust based on header height */
         right: 0; 
         background-color: white; 
         width: 100%; 
@@ -441,20 +429,33 @@ p { font-size: 1.1rem; max-width: 700px; margin-left: auto; margin-right: auto; 
         margin: 10px 25px; 
         width: 100%;
     }
-    /* Show and style social icons in mobile menu */
     .main-nav .social-icons {
         margin-top: 20px;
-        margin-left: 0; /* Reset margin */
+        margin-left: 0;
         padding-top: 20px;
         border-top: 1px solid #eee;
         width: 100%;
     }
     .main-nav .social-icons a {
+        width: auto;
         margin: 0 15px;
         font-size: 1.8rem;
     }
+    .mobile-nav-toggle { 
+        display: block; 
+    }
 
-    .mobile-nav-toggle { display: block; }
+    /* --- General Layout Adjustments --- */
+    .why-us-grid {
+        grid-template-columns: 1fr;
+    }
+    .why-us-image {
+        margin-top: 40px;
+        order: -1; /* Move image to the top on smaller screens */
+    }
+    .why-us .container {
+        text-align: center;
+    }
 
     .hero h1 { 
         font-size: 2.8rem; 
@@ -462,24 +463,35 @@ p { font-size: 1.1rem; max-width: 700px; margin-left: auto; margin-right: auto; 
     .hero-subheading { 
         font-size: 1.2rem;
     }
-    .hero-images { flex-direction: column; align-items: center; }
+    .hero-images { 
+        flex-direction: column; 
+        align-items: center; 
+    }
 
-    .services-grid, .portfolio-grid, .process-grid { grid-template-columns: 1fr; }
+    .services-grid, .portfolio-grid, .process-grid { 
+        grid-template-columns: 1fr; 
+    }
     
-    .footer-container { flex-direction: column; text-align: center; }
-    .footer-col h4::after { left: 50%; transform: translateX(-50%); }
-    .contact-col p { justify-content: center; }
+    .footer-container { 
+        flex-direction: column; 
+        text-align: center; 
+    }
+    .footer-col h4::after { 
+        left: 50%; 
+        transform: translateX(-50%); 
+    }
+    .contact-col p { 
+        justify-content: center; 
+    }
     
     /* Services Page Fix */
     .service-feature {
         grid-template-columns: 1fr;
     }
-    /* This rule ensures text is always first on mobile */
     .service-description {
-        order: 1;
+        order: 1; /* Ensure text is first */
     }
-    /* This rule ensures image is always second on mobile */
     .service-image {
-        order: 2;
+        order: 2; /* Ensure image is second */
     }
 }
