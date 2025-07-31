@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Work | H&H Home Renovations</title>
+    <meta name="description" content="Browse the 'Before & After' portfolio of H&H Home Renovations to see our completed projects, including kitchen renovations, open-plan living spaces, and bathroom updates.">
+
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="icon" href="../../assets/images/favico.png" type="image/png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Raleway:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" xintegrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <style>
+        /* --- Project Page Specific Styles --- */
+        .project-showcase {
+            padding-top: 60px;
+            padding-bottom: 60px;
+        }
+        .project-entry {
+            text-align: center;
+            margin-bottom: 80px;
+            max-width: 1100px; 
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .project-details {
+            margin-bottom: 40px;
+            text-align: left;
+        }
+        .project-details h3 {
+            font-size: 2.2rem;
+            color: var(--dark-blue);
+            margin-bottom: 1rem;
+        }
+        .project-details p {
+            max-width: none;
+        }
+
+        /* --- Before & After Slider Styles --- */
+        .before-after-slider {
+            position: relative;
+            width: 100%;
+            /* UPDATED: Changed aspect-ratio to 21/9 for a shorter, wider look */
+            aspect-ratio: 21 / 9;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            cursor: col-resize;
+            background-color: #f0f0f0;
+            margin-bottom: 25px;
+        }
+        
+        .project-entry .before-after-slider:last-child {
+            margin-bottom: 0;
+        }
+
+        .before-after-slider .image-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .before-after-slider .before-wrapper {
+            clip-path: inset(0 50% 0 0);
+            z-index: 2;
+        }
+
+        .before-after-slider .after-wrapper {
+            z-index: 1;
+        }
+
+        .before-after-slider img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+
+        .slider-handle {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 4px;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            transform: translateX(-50%);
+            z-index: 3;
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .slider-handle-icon {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+
+        .slider-handle-icon::before,
+        .slider-handle-icon::after {
+            content: '';
+            border-style: solid;
+            border-width: 0 2px 0 0;
+            border-color: #333;
+            width: 8px;
+            height: 8px;
+            display: inline-block;
+        }
+
+        .slider-handle-icon::before {
+            transform: rotate(135deg);
+        }
+        .slider-handle-icon::after {
+            transform: rotate(-45deg);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .project-details {
+                text-align: center;
+            }
+            /* On mobile, a 16:9 ratio is often better */
+            .before-after-slider {
+                aspect-ratio: 16 / 9;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header" role="banner">
+        <a href="/" class="logo" aria-label="H&H Home Renovations - Go to homepage">
+            <img src="../../assets/images/logo.png" alt="H&H Home Renovations Logo">
+        </a>
+        <nav class="main-nav" id="main-nav" role="navigation" aria-label="Main navigation">
+            <a href="/"><i class="ri-home-line" aria-hidden="true"></i> Home</a>
+            <a href="/pages/portfolio/" aria-current="page"><i class="ri-briefcase-line" aria-hidden="true"></i> Portfolio</a>
+            <a href="/pages/services/"><i class="ri-customer-service-2-line" aria-hidden="true"></i> Services</a>
+            <a href="/pages/about/"><i class="ri-information-line" aria-hidden="true"></i> About</a>
+            <a href="/pages/contact/"><i class="ri-mail-send-line" aria-hidden="true"></i> Contact Us</a>
+            <div class="social-icons" role="complementary" aria-label="Social media links">
+                <a href="https://www.facebook.com/profile.php?id=61550926522369" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook page">
+                    <i class="ri-facebook-fill" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.instagram.com/hh_home_renovations?igsh=MW14Zm16cnBrcHhrdA==" target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram page">
+                    <i class="ri-instagram-line" aria-hidden="true"></i>
+                </a>
+            </div>
+        </nav>
+        <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav">&#9776;</button>
+    </header>
+
+    <main id="main" role="main">
+        <section class="hero" style="background-image: linear-gradient(rgba(25, 42, 86, 0.7), rgba(25, 42, 86, 0.7)), url('../../assets/images/homepagepic1.jpeg');">
+            <div class="hero-content">
+                <h1 class="animate-hero-text">Our Work</h1>
+                <p class="hero-subheading">Transforming Spaces, Inspiring Lives</p>
+            </div>
+        </section>
+
+        <section class="project-showcase">
+            <div class="container">
+
+                <div class="project-entry fade-in-section">
+                    <div class="project-details">
+                        <h3>Bath and Restroom Update</h3>
+                        <p>This area is the base of any house upgrade; hence, it's been renovated to modern standards. A sleek false ceiling was installed to give the bathroom a modern look, along with high-quality fixtures, beautiful tiling, and smart storage for a spa-like retreat.</p>
+                    </div>
+                    
+                    <div class="before-after-slider">
+                        <div class="image-wrapper before-wrapper">
+                            <img src="../../assets/images/before bath.jpg" alt="Before the bathroom update - old ceiling and fixtures">
+                        </div>
+                        <div class="image-wrapper after-wrapper">
+                            <img src="../../assets/images/after bath.jpg" alt="After the bathroom update - new panelled ceiling and modern lighting">
+                        </div>
+                    </div>
+                    <div class="before-after-slider">
+                        <div class="image-wrapper before-wrapper">
+                            <img src="../../assets/images/before room.jpg" alt="Before the room ceiling update - textured ceiling with old light fitting">
+                        </div>
+                        <div class="image-wrapper after-wrapper">
+                            <img src="../../assets/images/after room.jpg" alt="After the room ceiling update - smooth panelled ceiling with spotlights">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-entry fade-in-section">
+                    <div class="project-details">
+                        <h3>Living Renovation/Media Wall</h3>
+                        <p>This living room had great potential but needed thoughtful re-planning and renovation. The space was previously disconnected, dated, and dysfunctional — now transformed with a bright, modern, and functional Media Wall.</p>
+                    </div>
+                     <div class="before-after-slider">
+                        <div class="image-wrapper before-wrapper">
+                            <img src="https://placehold.co/1600x900/e0e0e0/6c757d?text=Before" alt="Placeholder for before image of media wall">
+                        </div>
+                        <div class="image-wrapper after-wrapper">
+                             <img src="../../assets/images/media wall.jpg" alt="After the media wall renovation - custom built-in unit with TV and fireplace">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-entry fade-in-section">
+                    <div class="project-details">
+                        <h3>False Ceiling with cool lighting</h3>
+                        <p>Enhance your living room with a stylish false ceiling that adds elegance, hides wiring, and supports modern lighting. We offer expert design and installation using high-quality materials for a flawless finish.</p>
+                    </div>
+                     <div class="before-after-slider">
+                        <div class="image-wrapper before-wrapper">
+                            <img src="https://placehold.co/1600x900/e0e0e0/6c757d?text=Before" alt="Placeholder for before image of false ceiling">
+                        </div>
+                        <div class="image-wrapper after-wrapper">
+                             <img src="../../assets/images/false ceiling.jpg" alt="After the false ceiling installation with recessed and ambient lighting">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="final-cta fade-in-section">
+             <div class="container">
+                <h2>Ready to Start Your Own Project?</h2>
+                <p>Inspired by our work? Let's discuss how we can transform your home.</p>
+                <a href="/pages/contact/" class="cta-button">Get in Touch</a>
+            </div>
+        </section>
+    </main>
+    
+<footer class="main-footer" role="contentinfo">
+    <div class="footer-container">
+        <div class="footer-col about-col">
+            <img src="../../assets/images/logo.png" alt="H&H Home Renovations Logo" class="footer-logo">
+            <p>Bringing your vision to life with a seamless, concept-to-completion renovation experience. Serving County Longford and surrounding areas.</p>
+        </div>
+        <div class="footer-col links-col">
+            <h3>Quick Links</h3>
+            <nav role="navigation" aria-label="Footer navigation">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/pages/services/">Services</a></li>
+                    <li><a href="/pages/portfolio/">Portfolio</a></li>
+                    <li><a href="/pages/about/">About Us</a></li>
+                    <li><a href="/pages/contact/">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="footer-col contact-col">
+            <h3>Contact Info</h3>
+            <address>
+                <p><i class="fas fa-phone"></i> <a href="tel:0899420466">089 942 0466</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:info@hhhomerenovations.ie">info@hhhomerenovations.ie</a></p>
+                <p><i class="fas fa-map-marker-alt"></i> Castlepollard,County Westmeath, Ireland</p>
+            </address>
+        </div>
+        <div class="footer-col social-col">
+            <h3>Follow Us</h3>
+            <div class="footer-social-icons">
+                <a href="https://www.facebook.com/profile.php?id=61550926522369" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/hh_home_renovations?igsh=MW14Zm16cnBrcHhrdA==" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>Copyright © <span id="copyright-year"></span> H&H Home Renovations – All Rights Reserved.</p>
+    </div>
+</footer>
+
+ <script src="../../js/main.js" defer></script>
+
+ <script>
+    function initializeBeforeAfterSliders() {
+        document.querySelectorAll('.before-after-slider').forEach(slider => {
+            const beforeWrapper = slider.querySelector('.before-wrapper');
+            
+            if (slider.querySelector('.slider-handle')) {
+                return;
+            }
+
+            const handle = document.createElement('div');
+            handle.className = 'slider-handle';
+            const handleIcon = document.createElement('div');
+            handleIcon.className = 'slider-handle-icon';
+            handle.appendChild(handleIcon);
+
+            slider.appendChild(handle);
+
+            const moveSlider = (clientX) => {
+                const rect = slider.getBoundingClientRect();
+                let x = clientX - rect.left;
+                x = Math.max(0, Math.min(x, rect.width)); 
+                const percent = (x / rect.width) * 100;
+
+                beforeWrapper.style.clipPath = `inset(0 ${100 - percent}% 0 0)`;
+                handle.style.left = `${percent}%`;
+            };
+
+            let isDragging = false;
+
+            slider.addEventListener('mousedown', (e) => { isDragging = true; e.preventDefault(); });
+            slider.addEventListener('touchstart', (e) => { isDragging = true; });
+            window.addEventListener('mouseup', () => { isDragging = false; });
+            window.addEventListener('touchend', () => { isDragging = false; });
+
+            window.addEventListener('mousemove', (e) => {
+                if (isDragging) moveSlider(e.clientX);
+            });
+            
+            window.addEventListener('touchmove', (e) => {
+                if (isDragging && e.touches.length > 0) moveSlider(e.touches[0].clientX);
+            });
+
+            moveSlider(slider.getBoundingClientRect().left + slider.offsetWidth / 2);
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', initializeBeforeAfterSliders);
+ </script>
+</body>
+</html>

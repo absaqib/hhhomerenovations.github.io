@@ -6,13 +6,13 @@
     <title>About H&H | Our Story & Our Promise</title>
     <meta name="description" content="Learn about H&H Home Renovations, our integrated team of experts, and our commitment to a seamless, 'concept to completion' client experience.">
 
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="icon" href="../assets/images/favico.png" type="image/png">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="icon" href="../../assets/images/favico.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Raleway:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" xintegrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
     <style>
         .about-section {
             display: grid;
@@ -51,27 +51,31 @@
 </head>
 <body>
 
-    <header class="main-header">
-        <a href="../index.html" class="logo">
-            <img src="../assets/images/logo.png" alt="H&H Home Renovations Logo">
+    <header class="main-header" role="banner">
+        <a href="/" class="logo" aria-label="H&H Home Renovations - Go to homepage">
+            <img src="../../assets/images/logo.png" alt="H&H Home Renovations Logo">
         </a>
-        <nav class="main-nav"  id="main-nav">
-            <a href="../index.html"><i class="fas fa-home"></i> Home</a>
-            <a href="Projects.html"><i class="fas fa-briefcase"></i> Portfolio</a>
-            <a href="Services.html"><i class="fas fa-concierge-bell"></i> Services</a>
-            <a href="About.html"><i class="fas fa-info-circle"></i> About</a>
-            <a href="Contact-Us.html"><i class="fas fa-envelope"></i> Contact Us</a>
-            <div class="social-icons">
-                <a href="https://www.facebook.com/profile.php?id=61550926522369" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                <a href="https://www.instagram.com/hh_home_renovations?igsh=MW14Zm16cnBrcHhrdA==" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <nav class="main-nav" id="main-nav" role="navigation" aria-label="Main navigation">
+            <a href="/"><i class="ri-home-line" aria-hidden="true"></i> Home</a>
+            <a href="/pages/portfolio/"><i class="ri-briefcase-line" aria-hidden="true"></i> Portfolio</a>
+            <a href="/pages/services/"><i class="ri-customer-service-2-line" aria-hidden="true"></i> Services</a>
+            <a href="/pages/about/" aria-current="page"><i class="ri-information-line" aria-hidden="true"></i> About</a>
+            <a href="/pages/contact/"><i class="ri-mail-send-line" aria-hidden="true"></i> Contact Us</a>
+            <div class="social-icons" role="complementary" aria-label="Social media links">
+                <a href="https://www.facebook.com/profile.php?id=61550926522369" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook page">
+                    <i class="ri-facebook-fill" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.instagram.com/hh_home_renovations?igsh=MW14Zm16cnBrcHhrdA==" target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram page">
+                    <i class="ri-instagram-line" aria-hidden="true"></i>
+                </a>
             </div>
         </nav>
-        <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Menu">&#9776;</button>
+        <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav">&#9776;</button>
     </header>
 
-    <main>
+    <main id="main" role="main">
 
-        <section class="hero" style="background-image: linear-gradient(rgba(25, 42, 86, 0.7), rgba(25, 42, 86, 0.7)), url('../assets/images/logowithbackground.jpeg');">
+        <section class="hero" style="background-image: linear-gradient(rgba(25, 42, 86, 0.7), rgba(25, 42, 86, 0.7)), url('../../assets/images/logowithbackground.jpeg');">
             <div class="hero-content">
                 <h1 class="animate-hero-text">About H&H</h1>
                 <p class="hero-subheading">Your Vision, Our Expertise, One Unified Team.</p>
@@ -81,14 +85,14 @@
         <section class="container">
             <div class="about-section">
                 <div class="about-image">
-                    <img src="../assets/images/WhatsAppImage2022-10-04at12.04.33PM1.jpeg" alt="H&H Team collaborating on a project">
+                    <img src="../../assets/images/WhatsAppImage2022-10-04at12.04.33PM1.jpeg" alt="H&H Team collaborating on a modern kitchen project">
                 </div>
                 <div class="about-content">
                     <h2>Concept to Completion, Perfectly Streamlined.</h2>
                     <p>H&H was founded on a simple but powerful idea: to eliminate the stress and complexity of home renovations. We bring together a dedicated team of industry experts—from visionary designers to master builders—all under one roof. This integrated approach is the cornerstone of our "concept to completion" promise.</p>
                     <p>Unlike conventional projects that require you to juggle separate companies, our unified team ensures nothing falls through the cracks. This structure not only enhances efficiency and communication but also delivers significant cost savings, providing you with unmatched value.</p>
                     <p>Your journey begins with a dream. Your next step is to contact H&H. From that moment on, we guide you seamlessly through every phase of the renovation process, turning your vision into a stunning reality with professionalism you can trust.</p>
-                    <a href="Contact-Us.html" class="cta-button">Begin Your Journey</a>
+                    <a href="/pages/contact/" class="cta-button">Begin Your Journey</a>
                 </div>
             </div>
         </section>
@@ -97,36 +101,40 @@
              <div class="container">
                 <h2>Ready to Start Your Dream Renovation?</h2>
                 <p>Let's talk about your project. Our initial consultation is always free.</p>
-                <a href="Contact-Us.html" class="cta-button">Get in Touch</a>
+                <a href="/pages/contact/" class="cta-button">Get in Touch</a>
             </div>
         </section>
 
     </main>
 
-<footer class="main-footer">
+<footer class="main-footer" role="contentinfo">
     <div class="footer-container">
         <div class="footer-col about-col">
-            <img src="../assets/images/logo.png" alt="H&H Home Renovations Logo" class="footer-logo">
+            <img src="../../assets/images/logo.png" alt="H&H Home Renovations Logo" class="footer-logo">
             <p>Bringing your vision to life with a seamless, concept-to-completion renovation experience. Serving County Longford and surrounding areas.</p>
         </div>
         <div class="footer-col links-col">
-            <h4>Quick Links</h4>
-            <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="Projects.html">Portfolio</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="Contact-Us.html">Contact Us</a></li>
-            </ul>
+            <h3>Quick Links</h3>
+            <nav role="navigation" aria-label="Footer navigation">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/pages/services/">Services</a></li>
+                    <li><a href="/pages/portfolio/">Portfolio</a></li>
+                    <li><a href="/pages/about/">About Us</a></li>
+                    <li><a href="/pages/contact/">Contact Us</a></li>
+                </ul>
+            </nav>
         </div>
         <div class="footer-col contact-col">
-            <h4>Contact Info</h4>
-            <p><i class="fas fa-phone"></i> <a href="tel:0899420466">089 942 0466</a></p>
-            <p><i class="fas fa-envelope"></i> <a href="mailto:info@hhhomerenovations.ie">info@hhhomerenovations.ie</a></p>
-            <p><i class="fas fa-map-marker-alt"></i> Castlepollard,County Westmeath, Ireland</p>
+            <h3>Contact Info</h3>
+            <address>
+                <p><i class="fas fa-phone"></i> <a href="tel:0899420466">089 942 0466</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:info@hhhomerenovations.ie">info@hhhomerenovations.ie</a></p>
+                <p><i class="fas fa-map-marker-alt"></i> Castlepollard,County Westmeath, Ireland</p>
+            </address>
         </div>
         <div class="footer-col social-col">
-            <h4>Follow Us</h4>
+            <h3>Follow Us</h3>
             <div class="footer-social-icons">
                 <a href="https://www.facebook.com/profile.php?id=61550926522369" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
                 <a href="https://www.instagram.com/hh_home_renovations?igsh=MW14Zm16cnBrcHhrdA==" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -137,7 +145,7 @@
         <p>Copyright © <span id="copyright-year"></span> H&H Home Renovations – All Rights Reserved.</p>
     </div>
 </footer>
-    <script src="../js/main.js" defer></script>
+    <script src="../../js/main.js" defer></script>
 
 </body>
 </html>
